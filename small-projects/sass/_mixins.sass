@@ -1,4 +1,31 @@
-//Mixins
+// #Mixins
+=btn-default($color: $default)
+  .btn
+    outline: none
+    background: transparent
+    display: inline-block
+    text-align: center
+    cursor: pointer
+
+    @if $color == transparent
+      border: 1px solid $border
+
+      &:hover   
+        border: 1px solid darken($border, 20%)
+
+    @else 
+      &:hover
+        background-color: darken($color, 10%)
+
+=btn-filled($prop)   
+  @each $name, $color in $prop
+    .btn--#{$name}
+      border: none
+      background-color: $color
+
+      &:hover
+        background-color: darken($color, 10%)
+
 =header-defaults()
  @each $item in $header-sizes
   $header: map-get($item, header)
@@ -17,17 +44,24 @@
     width: 100%
 
 =container-widths($breakpoint, $max-width)
-  @media screen and ( min-width: $max-width )
+  @media screen and ( min-width: $breakpoint)
     .container
-      max-width: $breakpoint
+      max-width: $max-width
 
 =flex-row($jc: flex-start, $align-items: flex-start, $wrap: no-wrap)
-  @if $jc or $jc == true
+  display: flex
+  @if $jc == true
     justify-content: flex-start 
-  @if $align-items or $align-start == true 
+  @else 
+    justify-content: $jc
+  @if $align-items == true 
     align-items: flex-start
-  @if $wrap or $wrap == true 
+  @else 
+    align-items: $align-items
+  @if $wrap == true 
     flex-wrap: wrap
+  @else 
+    flex-wrap: $wrap
 
 =flex-grid($type, $columns, $breakpoint)
   @media screen and (min-width: $breakpoint)
@@ -53,16 +87,28 @@
     @media screen and (min-wdth: #{$val})
       @content
 
-=position($position: absolute, $top: null, $right: null, $bottom: null, $left: null)
+=padding($amount)
+  @for $pad-amount from 1 through $amount
+    .pad--#{$pad-amount}
+      padding: $pad-amount
+
+    .pad--top-#{$pad-amount}
+      padding-top: #{$pad-amount}px
+    
+    .pad--right-#{$pad-amount}
+      padding-right: #{$pad-amount}px
+
+    .pad--bottom-#{$pad-amount}
+      padding-bottom: #{$pad-amount}px
+
+    .pad--left-#{$pad-amount}
+      padding-left: #{$pad-amount}px
+     
+
+=position($position, $cords)
   position: $position
-  @if $top
-    top: $top
-  @if $right
-    top: $right
-  @if $bottom
-    top: $bottom
-  @if $left
-    top: $left
+  @each $prop, $value in $cords
+    $prop: $value
   
 =trans($property, $time)
   transition: $property $time ease

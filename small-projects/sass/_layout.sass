@@ -1,10 +1,10 @@
 /******Grid Systems**********/
 +container-defaults()
 
-+container-widths( map-get($container-max-widths, xl), map-get($grid-breakpoints, xl) )
-+container-widths( map-get($container-max-widths, lg), map-get($grid-breakpoints, lg) )
-+container-widths( map-get($container-max-widths, md), map-get($grid-breakpoints, md) )
-+container-widths( map-get($container-max-widths, sm), map-get($grid-breakpoints, sm) )
++container-widths( map-get($grid-breakpoints, sm), map-get($container-max-widths, sm) )
++container-widths( map-get($grid-breakpoints, md), map-get($container-max-widths, md) )
++container-widths( map-get($grid-breakpoints, lg), map-get($container-max-widths, lg) )
++container-widths( map-get($grid-breakpoints, xl), map-get($container-max-widths, xl) )
 
 .row
   +flex-row(flex-start, flex-start, wrap)
@@ -14,11 +14,11 @@
 
 
 // Flex Grid Breakpoint 
-+flex-grid( xl, $grid-columns, map-get($grid-breakpoints, xl) )
-+flex-grid( lg, $grid-columns, map-get($grid-breakpoints, lg) )
-+flex-grid( md, $grid-columns, map-get($grid-breakpoints, md) )
-+flex-grid( sm, $grid-columns, map-get($grid-breakpoints, sm) )
 +flex-grid( xs, $grid-columns, map-get($grid-breakpoints, xs) )
++flex-grid( sm, $grid-columns, map-get($grid-breakpoints, sm) )
++flex-grid( md, $grid-columns, map-get($grid-breakpoints, md) )
++flex-grid( lg, $grid-columns, map-get($grid-breakpoints, lg) )
++flex-grid( xl, $grid-columns, map-get($grid-breakpoints, xl) )
 
 /******Simple Resets**********/
 *
