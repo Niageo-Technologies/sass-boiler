@@ -1,0 +1,37 @@
+=input-unchecked
+  + label
+    display: inline-block
+    +position(relative, null)
+    +pointer()
+    +margin(0px 1rem 0.75rem null)
+
+    &::before
+      +size(1em, 1em)
+      +transform(translateY(3.5px))
+      +transition(all, 250ms, ease)
+      content: ''
+      box-shadow: 0.25px 1.125px 1px transparentize($dark, 0.88)
+      display: inline-block
+      margin-right: .50rem
+      border: 1.25px solid $form-border-default
+      @content
+
+    &:hover::before
+      border: 1.25px solid $form-border-focus
+
+=input-checked
+  &:checked + label
+
+    &::before
+      border-color: transparent
+      background: $primary
+
+    &::after
+      z-index: 2
+      content: ''
+      @content
+
+=input-disabled
+  &:disabled + label
+    opacity: 0.5
+    cursor: not-allowed

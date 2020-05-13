@@ -1,0 +1,49 @@
+.lightbox
+  +display-flex(center, center)
+  +position(fixed, 0 null null 0)
+  +size(100%, 100%)
+  +transition(all, 200ms, ease-in)
+  min-height: 720px
+  overflow: hidden
+  color: $white
+  background: transparentize($dark, 0.01)
+  z-index: -1
+  visibility: hidden
+  opacity: 0
+
+  &.active
+    z-index: 15
+    opacity: 1
+    visibility: visible
+
+  & .close
+    @extend %close-btn--reset
+    color: $white
+    +position(absolute, 1em 1em null null)
+
+  &__content
+    max-width: 90vw
+
+  &__caption
+    align-self: end
+
+  &__img
+    +display-grid(auto 400px, null, 1.5em)
+    margin-bottom: 1.5em
+    overflow: hidden
+    border-radius: 4px
+    max-height: 70vh
+    max-width: 100%
+    object-fit: contain
+    object-position: center
+
+  &--profile &__img
+    display: block
+    height: 340px
+    width: 340px
+    object-fit: cover
+    border-radius: 100%
+
+    + .lightbox__caption
+      display: none
+

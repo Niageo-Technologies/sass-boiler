@@ -1,0 +1,6 @@
+=make-img-object-util($sizes: $img-object-sizes)
+  @each $size in $sizes
+    .img-object--#{$size}
+      +img-object(contain, center, #{$size}px #{$size}px)
+
++make-img-object-util()

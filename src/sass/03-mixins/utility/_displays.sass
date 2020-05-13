@@ -1,0 +1,33 @@
+=displays()
+  .d--none
+    display: none !important
+
+  .d--flex
+    display: flex !important
+
+  .d--inline
+    display: inline !important
+
+  .d--inline-block
+    display: inline-block !important
+
+  .d--block
+    display: block !important
+
+=displays-breakpoints($breakpoints: $grid-breakpoints)
+  @each $name, $point in $breakpoints
+    @media screen and ( min-width: $point )
+      .d--#{$name}-none
+        display: none !important
+
+      .d--#{$name}-flex
+        display: flex !important
+
+      .d--#{$name}-inline
+        display: inline !important
+
+      .d--#{$name}-inline-block
+        display: inline-block !important
+
+      .d--#{$name}-block
+        display: block !important

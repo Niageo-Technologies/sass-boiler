@@ -1,0 +1,27 @@
+.media
+  height: 100%
+  +display-flex(true, true, wrap)
+
+  &--center
+    +display-flex(true, center, wrap)
+
+  &__img
+    +size(100%, $media-img-size)
+    +display-flex(center, center)
+    padding: 3px
+    min-width: 0
+    flex-basis: $media-img-size
+    margin-right: $media-img-margin-right
+    overflow: hidden
+
+    img
+      +img-object(cover, center)
+      +border-radius(100%)
+
+  &__img + &__body
+    min-width: 0
+    flex-basis: calc(100% - 1rem - $media-img-size)
+
+  &__body
+    flex: 4
+    height: 100%

@@ -1,0 +1,42 @@
+=make-alert-default()
+  .alert
+    +size(100%, null)
+    +position(relative, null)
+    padding: 1rem
+    font-size: $alert-font-size
+    border-radius: $alert-border-radius
+
+    &--close
+      text-align: left
+      padding-right: 2rem
+
+=make-alerts($colors: $color-list)
+  @each $color-name, $color in $colors
+    .alert--#{$color-name}
+      background: tint($color, 80%)
+      border: 1px solid tint($color, 70%)
+      @if $color == $warning
+        color: shade($color, 55%)
+      @else
+        color: shade($color, 25%)
+
+      .close
+        +pointer
+        +position(absolute, 1rem 1rem null null)
+        font-size: 1.5rem
+
+        background: transparent
+        border: none
+        line-height: 1
+        padding: 0px
+
+        @if $color == $warning
+          color: shade($color, 55%)
+        @else
+          color: shade($color, 25%)
+
+        &:hover
+          @if $color == $warning
+            color: shade($color, 80%)
+          @else
+            color: shade($color, 60%)

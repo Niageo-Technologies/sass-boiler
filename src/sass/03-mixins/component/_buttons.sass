@@ -1,0 +1,129 @@
+// Helpers
+=btn-focus($status: enabled, $color: null)
+  @if $status == enabled and $color
+    &:focus
+      box-shadow: 0px 0px 0px 4px transparentize($color, 0.54)
+    
+    &:active
+      background: darken($color, 10%)
+  @else
+    &:focus
+      box-shadow: none
+    
+    &:active
+      background: $color
+
+=btn-loading-rules($color)
+  +position(relative, null)
+  overflow: hidden
+  color: rgba(0, 0, 0, 0)
+  cursor: default
+
+  &:hover
+    background: $color
+    color: rgba(0, 0, 0, 0)
+
+  &::after
+    +size(1em, 1em)
+    +position(absolute, calc(50% - (1em + 3px) / 2) null null calc(50% - (1em + 3px) / 2) )
+    +border-radius(100%)
+    content: ''
+    border-top: 3px solid $white
+    border-right: 3px solid $white
+    border-bottom: 3px solid transparentize($white, .99)
+    border-left: 3px solid transparentize($white, .99)
+    animation: spin 650ms infinite linear
+
+
+// Mixins  
+=btn-default($color: $default)
+  .btn
+    +transition(all, 200ms, ease)
+    font-family: $btn-font-family
+    font-weight: $btn-font-weight
+    font-size: $btn-font-size
+    color: $btn-default-text-color
+    letter-spacing: $btn-letter-spacing
+    text-transform: $btn-text-transform
+    border-radius: $btn-radius
+    background: $btn-default-bg-color
+    padding: $btn-padding-vertical $btn-padding-horizontal
+    line-height: 1
+    text-align: center
+    appearance: none
+    border: none
+    outline: none
+    display: inline-block
+    cursor: pointer
+
+    i
+      display: inline-block
+      font-size: 1em
+      margin-right: 0.25em
+
+    &:disabled
+      opacity: 0.65
+      cursor: not-allowed
+
+    +btn-focus(enabled, $btn-default-bg-color)
+
+
+=btn-filled($colors: $color-list)
+  @each $name, $color in $colors
+    .btn--#{$name}
+      background: $color
+
+      @if $color == $success or $color == $danger or $color == $primary
+        color: $white
+      @else
+        color: $dark
+
+      &:hover
+        background: darken($color, 8%)
+
+      &[disabled]
+        background: $color
+
+      +btn-focus(enabled, $color)
+      
+
+=btn-link($colors: $color-list)
+  [class*="btn--link-"]
+    background: transparent !important
+
+    @each $name, $color in $colors
+      &.btn--link-#{$name}
+        padding: $btn-padding-vertical 0
+        background: transparent
+        color: $color
+
+        &:hover
+          background: transparent !important
+
+        +btn-focus(disabled)
+
+
+=btn-outlined($colors: $color-list)
+  @each $color-name, $color in $colors
+    .btn--outlined-#{$color-name}
+      background: tint($color, 90%)
+      color: $color
+      border: $btn-border-width solid $color
+      padding: calc(#{$btn-padding-vertical} - #{$btn-border-width}) calc(#{$btn-padding-horizontal} - #{$btn-border-width})
+
+      &:hover
+        background: $color
+        @if $color == $yellow
+          color: $dark
+        @else
+          color: $white
+      
+      +btn-focus(enabled, $color)
+
+
+=btn-loading($colors: $color-list)
+  @each $color-name, $color in $colors
+    .btn--loading-#{$color-name}
+      background: $color
+      +btn-loading-rules($color)
+      +btn-focus(disabled)

@@ -1,0 +1,52 @@
+/******Grid Systems**********/
++container-defaults()
+
++container-widths( map-get($grid-breakpoints, sm), map-get($container-max-widths, sm) )
++container-widths( map-get($grid-breakpoints, md), map-get($container-max-widths, md) )
++container-widths( map-get($grid-breakpoints, lg), map-get($container-max-widths, lg) )
++container-widths( map-get($grid-breakpoints, xl), map-get($container-max-widths, xl) )
++container-widths( map-get($grid-breakpoints, xxl), map-get($container-max-widths, xxl) )
+
+.container--fluid
+  width: 100%
+  max-width: 89.4%
+  margin: 0 auto
+
+.flex--row
+  +display-flex(flex-start, flex-start, wrap)
+  +margin(null -#{$grid-gap})
+
+.grid--row
+  +display-grid(repeat($grid-columns, 1fr), null, $grid-gap * 2)
+
+
+// Flex Grid Base Styles
++flex-grid-ready($name: $grid-name, $gap: $grid-gap)
+
+// Css Grid Base Styles
++css-grid-ready()
+
+
+// Flex Grid Breakpoint
++flex-grid( xs, $grid-columns, map-get($grid-breakpoints, xs) )
++flex-grid( sm, $grid-columns, map-get($grid-breakpoints, sm) )
++flex-grid( md, $grid-columns, map-get($grid-breakpoints, md) )
++flex-grid( lg, $grid-columns, map-get($grid-breakpoints, lg) )
++flex-grid( xl, $grid-columns, map-get($grid-breakpoints, xl) )
++flex-grid( xxl, $grid-columns, map-get($grid-breakpoints, xxl) )
+
+// Css Grid Breakpoint
++css-grid( xs, $grid-columns, map-get($grid-breakpoints, xs) )
++css-grid( sm, $grid-columns, map-get($grid-breakpoints, sm) )
++css-grid( md, $grid-columns, map-get($grid-breakpoints, md) )
++css-grid( lg, $grid-columns, map-get($grid-breakpoints, lg) )
++css-grid( xl, $grid-columns, map-get($grid-breakpoints, xl) )
++css-grid( xxl, $grid-columns, map-get($grid-breakpoints, xxl) )
+
+// Css Grid Offsets
++css-grid-offset( xs, $grid-columns, map-get($grid-breakpoints, xs) )
++css-grid-offset( sm, $grid-columns, map-get($grid-breakpoints, sm) )
++css-grid-offset( md, $grid-columns, map-get($grid-breakpoints, md) )
++css-grid-offset( lg, $grid-columns, map-get($grid-breakpoints, lg) )
++css-grid-offset( xl, $grid-columns, map-get($grid-breakpoints, xl) )
++css-grid-offset( xxl, $grid-columns, map-get($grid-breakpoints, xxl) )

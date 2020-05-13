@@ -1,0 +1,33 @@
+// Typography
+=header-defaults()
+  @each $item in $header-sizes
+    $header: map-get($item, header)
+    $font-size: map-get($item, size)
+    $line-height: map-get($item, leading)
+    $weight: map-get($item, weight)
+    #{$header}, .#{$header}
+      font-family: $header-font-family
+      font-size: $font-size
+      font-weight: $weight
+      line-height: $line-height
+      margin-top: 0px !important
+      margin-bottom: round( 0.20 * $font-size )
+
+body
+  font-family: $base-font-family
+  font-size: $base-font-size
+  line-height: $base-line-height
+  background-color: $color-bg
+  color: $color-text
+
+small,
+.small
+  font-size: 0.82em
+
+p,
+.paragraph
+  font-size: 1rem
+  margin-top: 0px
+  margin-bottom: #{$base-line-height}em
+
++header-defaults()

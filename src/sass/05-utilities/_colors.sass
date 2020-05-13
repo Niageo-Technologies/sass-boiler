@@ -1,0 +1,7 @@
+=make-color-utils($colors, $property, $prefix)
+  @each $color-name, $color in $colors
+    .#{$prefix}--#{$color-name}
+      #{$property}: $color
+
++make-color-utils($color-list, color, color)
++make-color-utils($color-list, background, bg)

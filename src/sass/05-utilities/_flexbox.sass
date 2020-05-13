@@ -1,0 +1,13 @@
+$justify-content-values: (flex-start, flex-end, center, space-between, space-around)
+$align-items-values: (stretch, center, flex-start, flex-end, baseline)
+$flex-direction-values: (row, row-reverse, column, column-reverse)
+$order-values: (1, 2, 3, 4, 5)
+
+
++make-util(justify-content, $justify-content-values, jc, true)
++make-util(justify-self, $justify-content-values, justify-self, true)
++make-util(align-items, $align-items-values, align-items, true)
++make-util(align-self, $align-items-values, align-self, true)
++make-util(flex-direction, $flex-direction-values, flex-direction, true)
++make-util(order, $order-values, order)
++make-order-breakpoints()

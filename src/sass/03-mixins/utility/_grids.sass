@@ -1,0 +1,55 @@
+// Flexbox/Regular Css grid grids along with containers
+
+=container-defaults($padding: $grid-gap)
+  .container
+    margin: 0 auto
+    padding: 0px $padding
+    width: 100%
+
+=container-widths($breakpoint, $max-width)
+  @media screen and ( min-width: $breakpoint)
+    .container
+      max-width: $max-width
+
+=css-grid($type, $columns, $breakpoint)
+  @media screen and (min-width: $breakpoint)
+    @for $i from 1 through $columns
+      $num: $i
+      $class: grid--#{$type}-#{$num}
+      .#{$class}
+        grid-column-start: auto
+        grid-column-end: span $num
+
+=css-grid-ready()
+  [class*="grid--xs"],
+  [class*="grid--sm"],
+  [class*="grid--md"],
+  [class*="grid--lg"],
+  [class*="grid--xl"],
+  [class*="grid--xxl"]
+    grid-column: span $grid-columns
+    overflow: hidden
+    // grid-column: span $grid-columns
+    // min-height: 1rem
+
+=css-grid-offset($type, $columns, $breakpoint)
+  @media screen and (min-width: $breakpoint)
+    @for $i from 1 through $columns - 1
+      $num: $i
+      $class: offset--#{$type}-#{$num}
+      [class*="grid--"].#{$class}
+        grid-column-start: #{$num + 1}
+
+=flex-grid($type, $columns, $breakpoint)
+  @media screen and (min-width: $breakpoint)
+    @for $i from 1 through $columns
+      $num: $i
+      $class: #{$grid-name}#{$type}-#{$num}
+      .#{$class}
+        width: calc(100% / #{$columns} * #{$num})
+
+=flex-grid-ready($name: $grid-name, $gap: $grid-gap)
+  [class^="#{$name}"]
+    box-sizing: border-box
+    width: 100%
+    padding: 0px $gap

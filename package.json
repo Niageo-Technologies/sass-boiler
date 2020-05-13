@@ -1,19 +1,17 @@
 {
-  "name": "sass-boiler",
-  "version": "1.0.0",
-  "description": "This is just a simple boilerplate for laying out SASS (not SCSS) files in for many small projects (at the moment).",
+  "name": "spacecraft",
+  "version": "0.0.1",
+  "description": "A bootstrap-like css framework made for developers that follow BEM css conventions, style guide or rules",
   "main": "index.js",
   "scripts": {
-    "dev": "npm run development",
-    "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "watch": "npm run development -- --watch",
-    "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "prod": "npm run production",
-    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+    "dev": "parcel watch parcelfile.js -d ./public -o app --no-source-maps --no-autoinstall -t browser",
+    "prod": "parcel build parcelfile.js -d ./public -o app --no-source-maps --no-autoinstall -t browser",
+    "watch": "npm run dev",
+    "build": "npm run prod"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://gitlab.com/IsekaM/sass-boiler.git"
+    "url": "git+https://github.com/Niageo-Technologies/spacecraft.git"
   },
   "keywords": [
     "sass",
@@ -22,23 +20,32 @@
     "styling",
     "css",
     "flexbox",
-    "grid"
+    "grid",
+    "css-grid"
   ],
   "author": "Makesi Morrison",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/IsekaM/sass-boiler/issues"
+    "url": "https://github.com/Niageo-Technologies/spacecraft/issues"
   },
-  "homepage": "https://github.com/IsekaM/sass-boiler#readme",
+  "homepage": "https://github.com/Niageo-Technologies/spacecraft#readme",
   "devDependencies": {
-    "cross-env": "^7.0.0",
-    "laravel-mix": "^5.0.1",
-    "normalize.css": "^8.0.1",
-    "resolve-url-loader": "^3.1.0",
-    "sass": "^1.25.0",
-    "sass-loader": "^8.0.2"
+    "autoprefixer": "^9.7.6",
+    "bourbon": "^6.0.0",
+    "postcss-modules": "^2.0.0",
+    "sass": "^1.26.5"
   },
-  "dependencies": {
-    "bootstrap": "^4.4.1"
+  "dependencies": {},
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {
+        "grid": "true",
+        "overrideBrowserslist": [
+          "> 1%",
+          "last 4 versions",
+          "ie >= 9"
+        ]
+      }
+    }
   }
 }

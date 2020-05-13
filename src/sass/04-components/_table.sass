@@ -1,0 +1,72 @@
+.table
+  table-layout: fixed
+  border-collapse: separate
+  border-spacing: 0px 1.5px
+  width: 100%
+  // min-width: map-get($grid-breakpoints, xl)
+
+  &--container
+    overflow-x: auto
+
+  tbody tr:hover
+    +pointer
+    background: shade($white, 2%)
+
+  th
+    +position(sticky, 0px null null null)
+    font-family: $header-font-family
+    color: $dark-lighter
+    text-align: left
+
+  th, td
+    padding: 1rem .75rem
+
+  tr
+    +transition(opacity, 200ms, ease)
+    background: $white
+
+    td
+      color: $dark-light
+
+    &[data-resource].hide
+      opacity: 0
+
+      td
+        border-bottom: none
+
+  tr td, tr th
+    &:first-of-type
+      padding-left: 1.5rem
+
+    &:last-of-type
+      padding-right: 0px
+
+  +mQD( map-get($grid-breakpoints, xl) )
+    min-width: 0 !important
+    
+    thead
+      display: none
+
+    tr, td
+      display: block
+
+    td, tr td:first-of-type
+      padding: 0 0 20px
+
+    td::before
+      content: attr(data-label)
+      display: block
+      font-weight: $bold
+      margin-bottom: 0.4em
+
+    td:empty
+      display: none
+
+    tr
+      filter: drop-shadow(3.5px 3.5px 1px transparentize($dark, 0.95))
+      padding: 2em
+      margin-bottom: 1.5em
+      border-radius: 4px
+
+      td:last-of-type
+        padding-bottom: 0px

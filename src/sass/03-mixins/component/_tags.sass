@@ -1,0 +1,21 @@
+=make-tag-default()
+  .tag
+    +border-radius(3px)
+    +margin(0)
+    display: inline-block
+    min-width: 86px
+    padding: 0.4rem 1rem
+    font-size: $small-text-size
+    font-weight: $medium
+    text-align: center
+    text-transform: capitalize
+
+=make-tags($colors: $color-list)
+  @each $color-name, $color in $colors
+    .tag--#{$color-name}
+      @if $color == $warning
+        color: shade($color, 55%)
+      @else
+        color: shade($color, 30%)
+      background: tint($color, 75%)//tint($color, 75%)
+      border: 1px solid tint($color, 70%)

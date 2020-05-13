@@ -1,0 +1,11 @@
+.card
+  padding: $card-vertical-padding $card-horizontal-padding 
+  background: $card-bg-color
+  border-radius: $card-radius
+  margin-bottom: $card-margin-bottom
+  overflow: hidden
+  +mQD( map-get($grid-breakpoints, sm) )
+    padding: $card-vertical-padding calc(#{$card-horizontal-padding} * 75%)
+
+  &--shadow
+    @extend %shadow

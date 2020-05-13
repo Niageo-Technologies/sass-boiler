@@ -1,0 +1,24 @@
+// text
+$text-tranforms: (capitilize, lowercase, uppercase, normal)
+$text-aligns: (justify, left, right, center)
+
++make-text-utils($text-aligns, text-align)
++make-text-utils($text-tranforms, text-transform)
+
+.font--black
+  font-weight: $black
+
+.font--bold
+  font-weight: $bold
+
+.font--medium
+  font-weight: $medium
+
+.font--normal
+  font-weight: $regular
+
+.font--light
+  font-weight: $light
+
+.ellipsis
+  +ellipsis

@@ -1,0 +1,19 @@
+.hover--
+  &scale:hover
+    transform: scale(1.05)
+    +pointer
+
+  &translate-y:hover
+    transform: translateY(0.25rem)
+    +pointer
+
+  &translate-x:hover
+    transform: translateX(0.25rem)
+    +pointer
+
+// hover-utils-rules: tranform: translateY(0.25rem), transform: scale(1.1)
+
+// =make-hover-utils($modifier, $rules)
+//   @each $property, $value in $rules
+//     .hover--#{$modifier}:hover
+//       #{$property}: $value

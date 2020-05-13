@@ -1,0 +1,92 @@
+// Utility Mixins
+=padding-utils($amount)
+  @for $pad-amount from 0 through $amount
+    .pad--x-#{$pad-amount}
+      padding-left: #{$pad-amount}px !important
+      padding-right: #{$pad-amount}px !important
+
+    .pad--y-#{$pad-amount}
+      padding-top: #{$pad-amount}px !important
+      padding-bottom: #{$pad-amount}px !important
+
+    .pad--#{$pad-amount}
+      padding: #{$pad-amount}px !important
+
+    .pad--top-#{$pad-amount}
+      padding-top: #{$pad-amount}px !important
+
+    .pad--right-#{$pad-amount}
+      padding-right: #{$pad-amount}px !important
+
+    .pad--bottom-#{$pad-amount}
+      padding-bottom: #{$pad-amount}px !important
+
+    .pad--left-#{$pad-amount}
+      padding-left: #{$pad-amount}px !important
+
+=margin-utils($amount)
+  @for $margin-amount from 0 through $amount
+    .mar--x-#{$margin-amount}
+      margin-left: #{$margin-amount}px !important
+      margin-right: #{$margin-amount}px !important
+
+    .mar--y-#{$margin-amount}
+      margin-top: #{$margin-amount}px !important
+      margin-bottom: #{$margin-amount}px !important
+
+    .mar--#{$margin-amount}
+      margin: #{$margin-amount}px !important
+
+    .mar--top-#{$margin-amount}
+      margin-top: #{$margin-amount}px !important
+
+    .mar--right-#{$margin-amount}
+      margin-right: #{$margin-amount}px !important
+
+    .mar--bottom-#{$margin-amount}
+      margin-bottom: #{$margin-amount}px !important
+
+    .mar--left-#{$margin-amount}
+      margin-left: #{$margin-amount}px !important
+
+=element-sizes($sizes: $sizes)
+  @each $size in $sizes
+    .w--#{$size}
+      width: $size * 1%
+
+    .h--#{$size}
+      height: $size * 1%
+
+    .min-h--#{$size}
+      min-height: $size * 1%
+
+    .min-h--#{$size}
+      min-height: $size * 1%
+
+    .max-h--#{$size}
+      max-height: $size * 1%
+
+    .max-w--#{$size}
+      max-width: $size * 1%
+
+=element-sizes-breakpoints($sizes: $sizes, $breakpoints: $grid-breakpoints)
+  @each $name, $point in $breakpoints
+    @each $size in $sizes
+      @media screen and ( min-width: $point )
+        .w--#{$name}-#{$size}
+          width: $size * 1%
+
+        .h--#{$name}-#{$size}
+          height: $size * 1%
+
+        .min-h--#{$name}-#{$size}
+          min-height: $size * 1%
+
+        .min-h--#{$name}-#{$size}
+          min-height: $size * 1%
+
+        .max-h--#{$name}-#{$size}
+          max-height: $size * 1%
+
+        .max-w--#{$name}-#{$size}
+          max-width: $size * 1%

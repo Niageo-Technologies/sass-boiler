@@ -1,0 +1,76 @@
+// General Mixins to be used throughout SASS framework
+
+=border-radius($radius)
+  border-radius: $radius
+
+=display-flex($jc: flex-start, $align-items: flex-start, $wrap: nowrap)
+  display: flex
+  min-width: 0px
+  @if $jc == true
+    justify-content: flex-start
+  @else
+    justify-content: $jc
+  @if $align-items == true
+    align-items: flex-start
+  @else
+    align-items: $align-items
+  @if $wrap == true
+    flex-wrap: wrap
+  @else
+    flex-wrap: $wrap
+
+=display-grid($cols: null, $rows: null, $gap: null)
+  display: grid
+  @if $cols
+    grid-template-columns: $cols
+  @if $rows
+    grid-template-rows: $rows
+  @if $gap
+    grid-column-gap: $gap
+
+  @if $rows
+    grid-template-rows: $rows
+
+=ellipsis
+  text-overflow: ellipsis
+  overflow: hidden
+  white-space: nowrap
+
+=img-object($fit: cover, $position: center, $size: (100%, 100%))
+  +size(nth($size, 1), nth($size, 2))
+  object-fit: $fit
+  object-position: $position
+
+=make-util($property, $values, $prefix, $important: false)
+  @each $value in $values
+    .#{$prefix}--#{$value}
+      @if $important
+        #{$property}: $value !important
+      @else
+        #{$property}: $value
+
+// Media Queries
+=mQD($width)
+  @each $val in $width
+    @media screen and (max-width: #{$val})
+      @content
+
+=mQM($width)
+  @each $val in $width
+    @media screen and (min-wdth: #{$val})
+      @content
+
+=pointer()
+  cursor: pointer
+
+=transform($props)
+  transform: $props
+
+=transition($property, $time, $func)
+  transition: $property $time ease
+
+=size($width: null, $height: null)
+  @if $width
+    width: $width
+  @if $height
+    height: $height

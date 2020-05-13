@@ -1,0 +1,10 @@
+.radius--circle
+  +border-radius(100%)
+  overflow: hidden
+
+.disabled, [disabled]
+  opacity: 0.65
+  cursor: not-allowed
+
+$cursor-values: ( crosshair, grab, grabbing, help, not-allowed, pointer, text, zoom-in, zoom-out )
++make-util(cursor, $cursor-values, cursor)

@@ -1,0 +1,147 @@
+label
+  font-family: $header-font-family
+
+#{$all-text-inputs}, select
+  +border-radius(6px)
+  display: block
+  padding: 1rem
+  background: $white
+  border: 1.25px solid $form-border-default
+  color: $dark
+  width: 100%
+
+  &::placeholder
+    color: $form-placeholder-color
+
+#{$all-text-inputs}
+  &:hidden
+    display: none
+
+#{$all-text-inputs-focus}, select:focus
+  outline: none
+  border: 1.25px solid $form-border-focus
+
+#{$all-text-inputs-active},
+.input--active,
+select:active
+  border: 1.25px solid $form-border-active
+
+#{$all-text-inputs-invalid},
+.input--invalid,
+select:invalid
+  border: 1.25px solid $form-border-invalid
+
+#{$all-text-inputs}
+  &:disabled
+    cursor: not-allowed
+    opacity: 0.75
+
+textarea
+  min-height: 160px
+  resize: vertical
+
+.form--group
+  margin-bottom: 1.25rem
+
+.form--inline
+  +display-flex(space-between, center, wrap)
+
+.input--label
+  display: inline-block
+  margin-bottom: 0.375rem
+
+.input--checkbox, input[type="checkbox"]
+  @extend %input--reset
+
+  +input-unchecked
+    border-radius: 4px
+
+  +input-checked
+    +size(0.40em, 0.20em)
+    +transform(rotate(-45deg))
+    +position(absolute, 8.5px null null 5px)
+
+    border-left: 2px solid $white
+    border-bottom: 2px solid $white
+
+  +input-disabled()
+
+.input--radio, input[type="radio"]
+  @extend %input--reset
+
+  +input-unchecked
+    border-radius: 100%
+
+  +input-checked
+    +size(0.40em, 0.40em)
+    +position(absolute, 9.5px null null 5.50px)
+    background: $white
+    border-radius: 100%
+
+  +input-disabled()
+
+.input--file, input[type="file"]
+  @extend %input--reset
+
+  + label
+    position: relative
+    display: inline-block
+    padding: 1rem
+    border: 1.25px dashed $white-darker
+    border-radius: 6px
+    background: $white
+    color: $dark-lighter
+    cursor: pointer
+    font-weight: $bold
+    font-size: $small-text-size
+    text-transform: uppercase
+    text-align: center
+    letter-spacing: 0.075rem
+
+    > i, > img
+      margin-right: 0.50rem
+
+    &:hover
+      border: 1.25px solid $blue
+      color: $blue
+
+.input--select
+  +position(relative, null)
+
+  select
+    appearance: none
+
+  &::after
+    +position(absolute, 1.25rem 1.25rem null null)
+    +size(0.5rem, 0.5rem)
+    +transform(rotate(-45deg))
+    content: ''
+    background: transparent
+    border-left: 1.75px solid shade($white-darker, 40%)
+    border-bottom: 1.75px solid shade($white-darker, 40%)
+
+.input--select-multiple
+  +position(relative, null)
+
+  .select__container
+    text-align: left
+    @extend select
+
+  .select__dropdown
+    +position(absolute, 100% null null 0px)
+    +size(100%, auto)
+    text-align: left
+    padding: 1rem
+    background: $white
+    @extend %shadow
+
+fieldset
+  border: none
+  padding: 0
+  margin: 0px 0px 1.5rem
+
+  legend
+    font-family: $header-font-family
+    font-size: 1rem
+    font-weight: $bold
+    margin-bottom: 1.25rem

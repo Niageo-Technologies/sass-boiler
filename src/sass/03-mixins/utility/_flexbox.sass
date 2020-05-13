@@ -1,0 +1,6 @@
+=make-order-breakpoints($values: $order-values, $breakpoints: $grid-breakpoints)
+  @each $name, $point in $breakpoints
+    @each $value in $values
+      @media screen and ( min-width: $point )
+        .order--#{$name}-#{$value}
+          order: $value

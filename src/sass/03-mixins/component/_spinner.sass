@@ -1,0 +1,17 @@
+=make-spinners($colors)
+  @each $color-name, $color in $colors
+    .spinner--#{$color-name}
+      +size(1.5rem, 1.5rem)
+      +border-radius(100%)
+      display: inline-block
+      border-top: 3px solid $color
+      border-right: 3px solid $color
+      border-bottom: 3px solid transparentize($color, 0.95)
+      border-left: 3px solid transparentize($color, 0.95)
+      animation: spin 800ms infinite linear
+
+  @keyframes spin
+    0%
+      +transform(rotate(0deg))
+    100%
+      +transform(rotate(360deg))
