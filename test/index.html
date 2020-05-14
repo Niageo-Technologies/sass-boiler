@@ -8,10 +8,56 @@
       href="https://unpkg.com/@fortawesome/fontawesome-free@5.12.1/css/all.min.css"
     />
     <link rel="stylesheet" href="../public/app.css" />
+
+    <script src="../public/app.js"></script>
     <title>Document</title>
   </head>
   <body>
-    <div class="container">
+    <nav class="nav nav--fixed nav--white">
+      <div class="container">
+        <div class="nav__logo">
+          <a href="/">
+            <img
+              src="{{ asset('img/logos/niageo-logo-with-type.svg') }}"
+              alt="niageo logo"
+              height="30"
+            />
+          </a>
+        </div>
+
+        <ul class="nav__links">
+          <li
+            class="nav__link {{ Request::is('/') || Request::is('') ? 'active' : '' }}"
+          >
+            <a href="/" class="nav__text">Home</a>
+          </li>
+          {{--
+          <li class="nav__link {{ Request::is('work') ? 'active' : '' }}">
+            <a href="" class="nav__text">Our Work</a>
+          </li>
+          --}}
+          <li class="nav__link {{ Request::is('about') ? 'active' : '' }}">
+            <a href="/about" class="nav__text">About</a>
+          </li>
+          <li class="nav__link {{ Request::is('contact') ? 'active' : '' }}">
+            <a href="/contact" class="nav__text">Contact</a>
+          </li>
+          <li
+            class="nav__link btn btn--primary"
+            data-toggle="modal"
+            data-target="#modal"
+          >
+            <a class="nav__text cursor--pointer">Estimate Project</a>
+          </li>
+        </ul>
+
+        <div class="nav__burger cursor--pointer">
+          <i class="fas fa-bars"></i>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mar-t--48">
       <button type="button" class="btn">
         <i class="fas fa-car"></i>
         Click Here

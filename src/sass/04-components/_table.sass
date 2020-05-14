@@ -3,30 +3,29 @@
   border-collapse: separate
   border-spacing: 0px 1.5px
   width: 100%
-  // min-width: map-get($grid-breakpoints, xl)
+  min-width: map-get($grid-breakpoints, xl)
 
   &--container
     overflow-x: auto
 
   tbody tr:hover
-    +pointer
-    background: shade($white, 2%)
+    background: $table-hover-color //shade($table, 2%)
 
   th
     +position(sticky, 0px null null null)
-    font-family: $header-font-family
-    color: $dark-lighter
+    font-family: $table-header-font-family
+    color: $table-header-color //$dark-lighter
     text-align: left
 
   th, td
-    padding: 1rem .75rem
+    padding: $table-padding-vertical $table-padding-horizontal //1rem .75rem
 
   tr
     +transition(opacity, 200ms, ease)
     background: $white
 
     td
-      color: $dark-light
+      color: $table-text-color //$dark-light
 
     &[data-resource].hide
       opacity: 0
@@ -41,32 +40,33 @@
     &:last-of-type
       padding-right: 0px
 
-  +mQD( map-get($grid-breakpoints, xl) )
-    min-width: 0 !important
+  &--responsive
+    +mQD( map-get($grid-breakpoints, xl) )
+      min-width: 0 !important
     
-    thead
-      display: none
+      thead
+        display: none
 
-    tr, td
-      display: block
+      tr, td
+        display: block
 
-    td, tr td:first-of-type
-      padding: 0 0 20px
+      td, tr td:first-of-type
+        padding: 0 0 20px
 
-    td::before
-      content: attr(data-label)
-      display: block
-      font-weight: $bold
-      margin-bottom: 0.4em
+      td::before
+        font-weight: $table-card-label-weight
+        content: attr(data-label)
+        display: block
+        margin-bottom: 0.4em
 
-    td:empty
-      display: none
+      td:empty
+        display: none
 
-    tr
-      filter: drop-shadow(3.5px 3.5px 1px transparentize($dark, 0.95))
-      padding: 2em
-      margin-bottom: 1.5em
-      border-radius: 4px
+      tr
+        padding: $table-card-padding
+        border-radius: $table-card-radius
+        filter: drop-shadow(3.5px 3.5px 1px transparentize($dark, 0.95))
+        margin-bottom: 1em
 
-      td:last-of-type
-        padding-bottom: 0px
+        td:last-of-type
+          padding-bottom: 0px

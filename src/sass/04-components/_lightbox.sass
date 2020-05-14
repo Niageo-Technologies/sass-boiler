@@ -3,12 +3,12 @@
   +position(fixed, 0 null null 0)
   +size(100%, 100%)
   +transition(all, 200ms, ease-in)
-  min-height: 720px
+  color: $lightbox-text-color
+  background: transparentize($lightbox-bg-color, 0.01)
+  min-height: $lightbox-min-height
   overflow: hidden
-  color: $white
-  background: transparentize($dark, 0.01)
-  z-index: -1
   visibility: hidden
+  z-index: -1
   opacity: 0
 
   &.active
@@ -18,7 +18,7 @@
 
   & .close
     @extend %close-btn--reset
-    color: $white
+    color: $lightbox-close-btn-color
     +position(absolute, 1em 1em null null)
 
   &__content
@@ -29,18 +29,18 @@
 
   &__img
     +display-grid(auto 400px, null, 1.5em)
-    margin-bottom: 1.5em
+    border-radius: $lightbox-img-radius
+    margin-bottom: $lightbox-img-margin
     overflow: hidden
-    border-radius: 4px
     max-height: 70vh
     max-width: 100%
     object-fit: contain
     object-position: center
 
   &--profile &__img
+    height: $lightbox-profile-img-size
+    width: $lightbox-profile-img-size
     display: block
-    height: 340px
-    width: 340px
     object-fit: cover
     border-radius: 100%
 

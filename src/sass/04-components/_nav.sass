@@ -1,112 +1,61 @@
-.on-nav
+.nav
   +position(relative, null)
-  padding: 1.5rem 0px
+  padding: $nav-padding-vertical $nav-padding-horizontal //24px 0px
+  background: $nav-bg-color
+
+  .container
+    +display-flex(space-between, center)
+
+  &__links
+    +display-flex(true, center)
+    color: $nav-link-color
+    font-family: $nav-font-family //$header-font-family
+    background: inherit
+
+  &__link
+    margin-right: $nav-link-margin //36px
+
+    &.active
+      font-weight: $nav-active-font-weight
+      color: $nav-active-text-color
+
+    &:last-of-type
+      margin-right: 0px
+
+    &:not(.btn):hover
+      color: $nav-link-color-hover
+
+  &__text
+    color: inherit
+    font-size: inherit
+    font-weight: inherit
 
   &__burger
-    font-size: 1.25rem
-
-  &__notification
-    +pointer()
-    +position(relative, null)
-    border-right: 2px solid $dark
-    @extend %fs--16
-
-  &__notification-count
-    +border-radius(100%)
-    +size(1rem, 1rem)
-    +position(absolute, -0.5rem 0.5rem null null)
-    font-size: 10px
-    font-family: $header-font-family
-    line-height: 1rem
-    text-align: center
-    background: $danger
-    color: $white
-
-    &:empty
-      visibility: hidden
-
-  &__notification-bell
-    color: $dark
-
-  &__userimg
-    +pointer()
-    +position(relative, null)
-    padding-left: 1rem
-
-  &__signifier
-    +position(absolute, -10px -10px null null)
-    +size(24px, 24px)
-    +margin(0)
-    border-radius: 100%
-    line-height: 24px
-    text-align: center
-    font-size: 0.60rem
-    background: $primary
-    color: $white
-
-  &__logo
     display: none
+    font-size: 1.5rem
+    +pointer
 
-  &__burger, &__notification-bell
-    &:hover
-      color: $primary
+  &--fixed
+    +position(sticky, 0px null null null)
+    z-index: 5
 
-  +mQD(map-get( $grid-breakpoints, md ))
-    &__burger, & > &__username
-      display: none
+  +mQD( map-get($grid-breakpoints, lg) )
+    padding: 1rem 0
 
-    &__userimg
-      padding-left: 1rem
+    &.active &__links
+      height: auto
+      padding: 0px 2rem 2rem
 
-    &__logo
+    &__burger
       display: block
 
-.on-nav__dropdown
-  +position(absolute, 80px 0px null null)
-  +border-radius(4px)
-  @extend %shadow
-  z-index: 100
-  font-family: $header-font-family
-  background: $white
-  padding: 16px 24px 4px
-  opacity: 0
-  visibility: hidden
-
-  &.active
-    opacity: 1
-    visibility: visible
-
-  .on-nav__
-    &userinfo
-      +display-flex(true, center)
+    &__links
+      +position(absolute, 100% null null 0px)
+      +size(100vw, auto)
+      +display-flex(center, center)
       flex-direction: column
+      overflow: hidden
+      height: 0px
 
-    &username
-      font-weight: $bold
-      margin-top: 10px
-
-    &email
-      color: $dark-lighter
-
-    &section
-      border-top: 1px solid tint($dark-lighter, 80%)
-
-    &section:last-of-type .on-nav__link
-      color: $red
-
-      &:hover
-        color: darken($red, 10%)
-
-    &links
-      margin-top: 16px
-
-    &link
-      display: inline-block
-      padding: 8px 0px
-      color: $dark
-
-      i
-        margin-right: 6px
-
-      &:hover
-        color: $primary
+    &__link
+      +margin(0px 0px 0.75rem)

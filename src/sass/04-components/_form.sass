@@ -4,10 +4,10 @@ label
 #{$all-text-inputs}, select
   +border-radius(6px)
   display: block
-  padding: 1rem
-  background: $white
-  border: 1.25px solid $form-border-default
-  color: $dark
+  padding: $form-padding-vertical $form-padding-horizontal
+  background: $form-bg
+  border: $form-border-width solid $form-border-default
+  color: $form-text-color
   width: 100%
 
   &::placeholder
@@ -19,17 +19,17 @@ label
 
 #{$all-text-inputs-focus}, select:focus
   outline: none
-  border: 1.25px solid $form-border-focus
+  border: $form-border-width solid $form-border-focus
 
 #{$all-text-inputs-active},
 .input--active,
 select:active
-  border: 1.25px solid $form-border-active
+  border: $form-border-width solid $form-border-active
 
 #{$all-text-inputs-invalid},
 .input--invalid,
 select:invalid
-  border: 1.25px solid $form-border-invalid
+  border: $form-border-width solid $form-border-invalid
 
 #{$all-text-inputs}
   &:disabled
@@ -54,15 +54,15 @@ textarea
   @extend %input--reset
 
   +input-unchecked
-    border-radius: 4px
+  border-radius: $form-radius
 
   +input-checked
-    +size(0.40em, 0.20em)
-    +transform(rotate(-45deg))
-    +position(absolute, 8.5px null null 5px)
+  +size(0.40em, 0.20em)
+  +transform(rotate(-45deg))
+  +position(absolute, 8.5px null null 5px)
 
-    border-left: 2px solid $white
-    border-bottom: 2px solid $white
+  border-left: 2px solid $white
+  border-bottom: 2px solid $white
 
   +input-disabled()
 
@@ -70,13 +70,13 @@ textarea
   @extend %input--reset
 
   +input-unchecked
-    border-radius: 100%
+  border-radius: 100%
 
   +input-checked
-    +size(0.40em, 0.40em)
-    +position(absolute, 9.5px null null 5.50px)
-    background: $white
-    border-radius: 100%
+  +size(0.40em, 0.40em)
+  +position(absolute, 9.5px null null 5.50px)
+  background: $white
+  border-radius: 100%
 
   +input-disabled()
 
@@ -84,22 +84,22 @@ textarea
   @extend %input--reset
 
   + label
+    padding: $form-padding-vertical $form-padding-horizontal
+    border: $form-border-width dashed $white-darker
+    border-radius: $form-radius
+    background: $form-bg
+    color: $form-placeholder-color
+    font-size: $small-text-size
+    font-weight: $bold
     position: relative
     display: inline-block
-    padding: 1rem
-    border: 1.25px dashed $white-darker
-    border-radius: 6px
-    background: $white
-    color: $dark-lighter
     cursor: pointer
-    font-weight: $bold
-    font-size: $small-text-size
     text-transform: uppercase
     text-align: center
     letter-spacing: 0.075rem
 
     > i, > img
-      margin-right: 0.50rem
+      margin-right: 0.50em
 
     &:hover
       border: 1.25px solid $blue
