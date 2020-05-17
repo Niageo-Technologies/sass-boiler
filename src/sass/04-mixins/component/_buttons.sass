@@ -1,17 +1,4 @@
 // Helpers
-=btn-focus($status: enabled, $color: null)
-  @if $status == enabled and $color
-    &:focus
-      box-shadow: 0px 0px 0px 3px transparentize($color, 0.54)
-    
-    &:active
-      background: darken($color, 10%)
-  @else
-    &:focus
-      box-shadow: none
-    
-    &:active
-      background: $color
 
 =btn-loading-rules($color)
   +position(relative, null)
@@ -39,6 +26,7 @@
 =btn-default($color: $default)
   .btn
     +transition(all, 200ms, ease)
+    +pointer
     font-family: $btn-font-family
     font-weight: $btn-font-weight
     font-size: $btn-font-size
@@ -54,7 +42,8 @@
     border: none
     outline: none
     display: inline-block
-    cursor: pointer
+    +element-focus(enabled, $btn-default-text-color)
+    +element-active(enabled, $btn-default-bg-color)
 
     i
       display: inline-block
@@ -65,10 +54,9 @@
       opacity: 0.65
       cursor: not-allowed
 
-    +btn-focus(enabled, $btn-default-text-color)
 
 
-=btn-filled($colors: $color-list)
+=btn-filled($colors: $color-map)
   @each $name, $color in $colors
     .btn--#{$name}
       background: $color
@@ -78,16 +66,18 @@
       @else
         color: $dark
 
+      +element-focus(enabled, $color)
+      +element-active(enabled, $color)
+
+
       &:hover
         background: darken($color, 8%)
 
       &[disabled]
         background: $color
 
-      +btn-focus(enabled, $color)
-      
 
-=btn-link($colors: $color-list)
+=btn-link($colors: $color-map)
   [class*="btn--link-"]
     background: transparent !important
 
@@ -96,20 +86,21 @@
         padding: $btn-padding-vertical 0
         background: transparent
         color: $color
+        +element-focus(disabled)
+        +element-active(enabled, $color)
 
         &:hover
           background: transparent !important
 
-        +btn-focus(disabled)
-
-
-=btn-outlined($colors: $color-list)
+=btn-outlined($colors: $color-map)
   @each $color-name, $color in $colors
     .btn--outlined-#{$color-name}
       background: tint($color, 90%)
       color: $color
       border: $btn-border-width solid $color
       padding: calc(#{$btn-padding-vertical} - #{$btn-border-width}) calc(#{$btn-padding-horizontal} - #{$btn-border-width})
+      +element-focus(enabled, $color)
+      +element-active(enabled, $color)
 
       &:hover
         background: $color
@@ -117,13 +108,10 @@
           color: $dark
         @else
           color: $white
-      
-      +btn-focus(enabled, $color)
 
-
-=btn-loading($colors: $color-list)
+=btn-loading($colors: $color-map)
   @each $color-name, $color in $colors
     .btn--loading-#{$color-name}
       background: $color
       +btn-loading-rules($color)
-      +btn-focus(disabled)
+      +element-focus(disabled)

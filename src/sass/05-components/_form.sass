@@ -1,25 +1,29 @@
 label
-  font-family: $header-font-family
+  +header-font-family
 
 #{$all-text-inputs}, select
   +border-radius(6px)
-  display: block
   padding: $form-padding-vertical $form-padding-horizontal
   background: $form-bg
   border: $form-border-width solid $form-border-default
   color: $form-text-color
+  display: block
+  line-height: 1
   width: 100%
+
+  +element-focus(enabled, $form-border-focus)
+    outline: none
+    border: $form-border-width solid $form-border-focus
 
   &::placeholder
     color: $form-placeholder-color
 
-#{$all-text-inputs}
   &:hidden
     display: none
 
-#{$all-text-inputs-focus}, select:focus
-  outline: none
-  border: $form-border-width solid $form-border-focus
+  &:disabled
+    cursor: not-allowed
+    opacity: 0.75
 
 #{$all-text-inputs-active},
 .input--active,
@@ -29,15 +33,10 @@ select:active
 #{$all-text-inputs-invalid},
 .input--invalid,
 select:invalid
-  border: $form-border-width solid $form-border-invalid
-
-#{$all-text-inputs}
-  &:disabled
-    cursor: not-allowed
-    opacity: 0.75
+  border: $form-border-width solid $form-border-invalid  
 
 textarea
-  min-height: 160px
+  min-height: 10rem
   resize: vertical
 
 .form--group
@@ -54,15 +53,15 @@ textarea
   @extend %input--reset
 
   +input-unchecked
-  border-radius: $form-radius
+    border-radius: $form-radius
 
   +input-checked
-  +size(0.40em, 0.20em)
-  +transform(rotate(-45deg))
-  +position(absolute, 8.5px null null 5px)
+    +size(0.40em, 0.20em)
+    +transform(rotate(-45deg))
+    +position(absolute, 8.5px null null 5px)
 
-  border-left: 2px solid $white
-  border-bottom: 2px solid $white
+    border-left: 2px solid $white
+    border-bottom: 2px solid $white
 
   +input-disabled()
 
@@ -70,13 +69,14 @@ textarea
   @extend %input--reset
 
   +input-unchecked
-  border-radius: 100%
+    border-radius: 100%
 
   +input-checked
-  +size(0.40em, 0.40em)
-  +position(absolute, 9.5px null null 5.50px)
-  background: $white
-  border-radius: 100%
+    +size(0.40em, 0.40em)
+    +position(absolute, 50% null null 5.50px)
+    +transform(translateY(calc(-50%)))
+    background: $white
+    border-radius: 100%
 
   +input-disabled()
 
@@ -84,17 +84,17 @@ textarea
   @extend %input--reset
 
   + label
+    +pointer
     padding: $form-padding-vertical $form-padding-horizontal
     border: $form-border-width dashed $white-darker
     border-radius: $form-radius
     background: $form-bg
     color: $form-placeholder-color
-    font-size: $small-text-size
-    font-weight: $bold
+    font-size: $custom-input-font-size
+    font-weight: $custom-input-font-weight
+    text-transform: $custom-input-text-transform
     position: relative
     display: inline-block
-    cursor: pointer
-    text-transform: uppercase
     text-align: center
     letter-spacing: 0.075rem
 
@@ -120,28 +120,13 @@ textarea
     border-left: 1.75px solid shade($white-darker, 40%)
     border-bottom: 1.75px solid shade($white-darker, 40%)
 
-.input--select-multiple
-  +position(relative, null)
-
-  .select__container
-    text-align: left
-    @extend select
-
-  .select__dropdown
-    +position(absolute, 100% null null 0px)
-    +size(100%, auto)
-    text-align: left
-    padding: 1rem
-    background: $white
-    @extend %shadow
-
 fieldset
   border: none
   padding: 0
   margin: 0px 0px 1.5rem
 
   legend
-    font-family: $header-font-family
+    +header-font-family
     font-size: 1rem
     font-weight: $bold
     margin-bottom: 1.25rem

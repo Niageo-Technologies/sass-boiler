@@ -10,7 +10,7 @@
     text-align: center
     text-transform: capitalize
 
-=make-tags($colors: $color-list)
+=make-tags($colors: $color-map)
   @each $color-name, $color in $colors
     .tag--#{$color-name}
       @if $color == $warning

@@ -1,7 +1,7 @@
 /******Simple Resets**********/
 *
+  +transition(all, 150ms, ease)
   box-sizing: border-box
-  transition: all 150ms ease
 
 html
   height: 100%
@@ -24,7 +24,7 @@ a
   color: $color-link
 
 a, button, [data-toggle], [data-target]
-  cursor: pointer
+  +pointer
 
 img
   max-width: 100%

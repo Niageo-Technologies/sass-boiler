@@ -1,19 +1,20 @@
 =input-unchecked
   + label
-    display: inline-block
     +position(relative, null)
     +pointer()
     +margin(0px 1rem 0.75rem null)
+    display: inline-block
 
     &::before
       +size(1em, 1em)
-      +transform(translateY(3.5px))
+      +transform(translateY(3px))
       +transition(all, 250ms, ease)
       content: ''
-      box-shadow: 0.25px 1.125px 1px transparentize($dark, 0.88)
+      // box-shadow: 0.25px 1.125px 1px transparentize($dark, 0.88)
       display: inline-block
       margin-right: .50rem
       border: 1.25px solid $form-border-default
+      background: $custom-checkbox-bg
       @content
 
     &:hover::before
@@ -24,7 +25,7 @@
 
     &::before
       border-color: transparent
-      background: $primary
+      background: $custom-checkbox-bg
 
     &::after
       z-index: 2

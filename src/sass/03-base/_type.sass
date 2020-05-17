@@ -6,7 +6,7 @@
     $line-height: map-get($item, leading)
     $weight: map-get($item, weight)
     #{$header}, .#{$header}
-      font-family: $header-font-family
+      +header-font-family
       font-size: $font-size
       font-weight: $weight
       line-height: $line-height
@@ -14,7 +14,7 @@
       margin-bottom: round( 0.20 * $font-size )
 
 body
-  font-family: $base-font-family
+  +base-font-family
   font-size: $base-font-size
   line-height: $base-line-height
   background-color: $color-bg

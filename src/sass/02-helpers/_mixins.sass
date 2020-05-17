@@ -31,10 +31,33 @@
   @if $rows
     grid-template-rows: $rows
 
+=element-focus($status: enabled, $color: null)
+  @if $status == enabled and $color
+    &:focus
+      @content
+      box-shadow: 0px 0px 0px 3px transparentize($color, 0.54)
+  @else
+    &:focus
+      box-shadow: none
+
+=element-active($status: enabled, $color: null)
+  @if $status == enabled and $color
+    &:active
+      @content
+      background: darken($color, 10%) !important
+
 =ellipsis
   text-overflow: ellipsis
   overflow: hidden
   white-space: nowrap
+
+=base-font-family
+  @extend %base-font-family
+  
+
+=header-font-family
+  @extend %header-font-family
+  
 
 =img-object($fit: cover, $position: center, $size: (100%, 100%))
   +size(nth($size, 1), nth($size, 2))

@@ -10,7 +10,7 @@
       text-align: left
       padding-right: 2rem
 
-=make-alerts($colors: $color-list)
+=make-alerts($colors: $color-map)
   @each $color-name, $color in $colors
     .alert--#{$color-name}
       background: tint($color, 80%)
