@@ -1673,7 +1673,7 @@ fieldset legend {
       flex-wrap: nowrap;
   color: #362D3D;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Avenir Next", "Avenir", "Segoe UI", "Lucida Grande", "Helvetica Neue", "Helvetica", "Fira Sans", "Roboto", "Noto", "Droid Sans", "Cantarell", "Oxygen", "Ubuntu", "Franklin Gothic Medium", "Century Gothic", "Liberation Sans", sans-serif;
-  background: inherit;
+  background: #FCF9F8;
 }
 .nav__link {
   margin-right: 36px;

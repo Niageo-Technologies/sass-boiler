@@ -571,7 +571,43 @@ var Close = /*#__PURE__*/function () {
 
 var _default = Close;
 exports.default = _default;
-},{"../helpers/checkDOMChanges":"src/js/helpers/checkDOMChanges.js"}],"src/js/app.js":[function(require,module,exports) {
+},{"../helpers/checkDOMChanges":"src/js/helpers/checkDOMChanges.js"}],"src/js/modules/Nav.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var Nav = /*#__PURE__*/function () {
+  function Nav() {
+    _classCallCheck(this, Nav);
+
+    this.navbar = document.querySelector('.nav');
+    this.burger = document.querySelector('.nav__burger');
+    console.log(this.burger);
+    this.burger.addEventListener('click', this.open.bind(this));
+  }
+
+  _createClass(Nav, [{
+    key: "open",
+    value: function open() {
+      this.navbar.classList.toggle('active');
+    }
+  }]);
+
+  return Nav;
+}();
+
+var _default = Nav;
+exports.default = _default;
+},{}],"src/js/app.js":[function(require,module,exports) {
 "use strict";
 
 var _Link = _interopRequireDefault(require("./modules/Link"));
@@ -586,15 +622,18 @@ var _Toggle = _interopRequireDefault(require("./modules/Toggle"));
 
 var _Close = _interopRequireDefault(require("./modules/Close"));
 
+var _Nav = _interopRequireDefault(require("./modules/Nav"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+new _Nav.default();
 new _Link.default().init();
 new _LimitChars.default();
 new _LazyLoad.default();
 new _InputFileName.default();
 new _Toggle.default();
 new _Close.default();
-},{"./modules/Link":"src/js/modules/Link.js","./modules/LimitChars":"src/js/modules/LimitChars.js","./modules/LazyLoad":"src/js/modules/LazyLoad.js","./modules/InputFileName":"src/js/modules/InputFileName.js","./modules/Toggle":"src/js/modules/Toggle.js","./modules/Close":"src/js/modules/Close.js"}],"../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+},{"./modules/Link":"src/js/modules/Link.js","./modules/LimitChars":"src/js/modules/LimitChars.js","./modules/LazyLoad":"src/js/modules/LazyLoad.js","./modules/InputFileName":"src/js/modules/InputFileName.js","./modules/Toggle":"src/js/modules/Toggle.js","./modules/Close":"src/js/modules/Close.js","./modules/Nav":"src/js/modules/Nav.js"}],"../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
 var bundleURL = null;
 
 function getBundleURLCached() {
