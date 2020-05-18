@@ -13,7 +13,7 @@
       // box-shadow: 0.25px 1.125px 1px transparentize($dark, 0.88)
       display: inline-block
       margin-right: .50rem
-      border: 1.25px solid $form-border-default
+      border: $form-border-width solid $form-border-default
       background: $custom-checkbox-bg
       @content
 
@@ -25,7 +25,7 @@
 
     &::before
       border-color: transparent
-      background: $custom-checkbox-bg
+      background: $custom-checkbox-bg-checked
 
     &::after
       z-index: 2
