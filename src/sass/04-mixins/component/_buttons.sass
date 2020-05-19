@@ -55,7 +55,6 @@
       cursor: not-allowed
 
 
-
 =btn-filled($colors: $color-map)
   @each $name, $color in $colors
     .btn--#{$name}
@@ -115,3 +114,4 @@
       background: $color
       +btn-loading-rules($color)
       +element-focus(disabled)
+      +element-active(disabled, $color)

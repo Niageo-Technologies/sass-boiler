@@ -41,10 +41,13 @@
       box-shadow: none
 
 =element-active($status: enabled, $color: null)
-  @if $status == enabled and $color
+  @if $status == enabled and $color != null
     &:active
       @content
       background: darken($color, 10%) !important
+  @else if $status == disabled and $color != null
+    &:active
+      background: $color !important
 
 =ellipsis
   text-overflow: ellipsis

@@ -28,12 +28,13 @@ label
 #{$all-text-inputs-active},
 .input--active,
 select:active
-  border: $form-border-width solid $form-border-active
+  border: $form-border-width solid $form-border-active-color
 
 #{$all-text-inputs-invalid},
 .input--invalid,
 select:invalid
-  border: $form-border-width solid $form-border-invalid  
+  border: $form-border-width solid $form-border-invalid-color  
+  +element-focus(enabled, $form-border-invalid-color)
 
 textarea
   min-height: 10rem
