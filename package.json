@@ -1,7 +1,7 @@
 {
   "name": "spacecraft",
   "version": "0.0.1",
-  "description": "A bootstrap-like css framework made for developers that follow BEM css conventions, style guide or rules",
+  "description": "A bootstrap-like CSS framework made for developers that follow BEM CSS conventions, style guide or rules",
   "main": "index.js",
   "scripts": {
     "dev": "parcel watch parcelfile.js -d ./public -o app --no-source-maps --no-autoinstall -t browser",
@@ -15,8 +15,6 @@
   },
   "keywords": [
     "sass",
-    "boiler",
-    "boiler-plate",
     "styling",
     "css",
     "flexbox",
@@ -32,6 +30,8 @@
   "devDependencies": {
     "autoprefixer": "^9.7.6",
     "bourbon": "^6.0.0",
+    "cssnano": "^4.1.10",
+    "lit-element": "^2.4.0",
     "postcss-modules": "^2.0.0",
     "sass": "^1.26.5"
   },

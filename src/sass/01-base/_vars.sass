@@ -1,0 +1,209 @@
+// Font weights
+$light: 300 !default
+$regular: 400 !default
+$medium: 500 !default
+$bold: 700 !default
+$bolder: 800 !default
+$black: 900 !default
+
+// Default Font Stack
+$default-font-stack: $font-stack-system !default
+
+// Base Font
+$base-font-family: $default-font-stack !default
+$base-font-weight: $regular !default
+$base-font-size: 16px !default
+$base-line-height: 1.5 !default
+
+// Header Font
+$header-font-family: $default-font-stack !default
+$header-sizes: ( (header: h1, size: 42px, leading: 1.2, weight: $bolder), (header: h2, size: 32px, leading: 1.2, weight: $bolder), (header: h3, size: 24px, leading: 1.25, weight: $bolder), (header: h4, size: 20px, leading: 1.4, weight: $bold), (header: h5, size: 1rem, leading: 1.5, weight: $bold), (header: h6, size: 1rem, leading: 1.4, weight: $bold) ) !default
+
+// Small Text Size
+$small-text-size: 13px !default
+
+// Defaults
+$default-radius: 4px !default
+
+// Grid Systems
+$container-max-widths: ( xxl: 1440px, xl: 1080px, lg: 920px, md: 640px, sm: 480px ) !default
+$grid-breakpoints: ( xxl: 1600px, xl: 1280px, lg: 960px, md: 720px, sm: 540px, xs: 0px ) !default
+$grid-columns: 12 !default
+$grid-gap: 12px !default
+$grid-name: col-- !default
+
+// Colors
+$white: #FCF9F8 !default
+$white-dark: #F6EDEA !default
+$white-darker: #E4D9D5 !default
+
+$blue: #13B3F1 !default
+$blue-light: #48C0EF !default
+$blue-lighter: #76CAEB !default
+
+$orange: #F66516 !default
+$orange-light: #F28449 !default
+$orange-lighter: #F3A47A !default
+
+$red: #F53A24 !default
+$red-light: #F15B48 !default
+$red-lighter: #F18679 !default
+
+$purple: #733C9C !default
+$purple-light: #815E9C !default
+$purple-lighter: #A088B3 !default
+
+$green: #27BC6C !default
+
+$yellow: #FFC919 !default
+
+$dark: #362D3D !default
+$dark-light: #665573 !default
+$dark-lighter: #A093AB !default
+
+// Btn, BG, Tag, Text, Colors
+$primary: $orange !default
+$secondary: $purple !default
+$success: $green !default
+$warning: $yellow !default
+$danger: $red !default
+$disabled: $dark-lighter !default
+$default: transparent !default
+$border: $disabled !default
+
+// Color List
+$color-map: (primary: $primary, secondary: $secondary, success: $success, warning: $warning, danger: $danger, dark: $dark) !default
+
+// Various Element Colors
+$color-text: $dark !default
+$color-link: $blue !default
+$color-bg: $white !default
+$color-bg-sec: $white-dark !default
+
+// Alert Vars
+$alert-close-font-size: 1.5rem !default
+$alert-border-radius: 6px !default
+$alert-font-size: $base-font-size !default
+$alert-border-width: 1px !default
+$alert-padding-vertical: 1rem !default
+$alert-padding-horizontal: 1rem !default
+
+// Btn Vars
+$btn-radius: 4px !default
+$btn-border-width: 1px !default
+$btn-font-size: 16px !default
+$btn-font-family: $header-font-family !default
+$btn-font-weight: $bold !default
+$btn-padding-vertical: 0.75rem  !default
+$btn-padding-horizontal: 1.5rem !default
+$btn-letter-spacing: 0 !default
+$btn-text-transform: normal !default
+$btn-default-bg-color: $white-darker !default
+$btn-default-text-color: $dark !default
+
+// Card Vars
+$card-vertical-padding: 2rem !default
+$card-horizontal-padding: 2rem !default
+$card-bg-color: $white !default
+$card-radius: $default-radius !default
+$card-margin-bottom: 1.5rem !default
+
+// Form Vars
+$form-bg: $white !default
+$form-border-default: $white-darker !default
+$form-border-focus: $blue !default
+$form-border-active-color: $blue !default
+$form-border-invalid-color: $danger !default
+$form-border-width: 1.25px !default
+$form-radius: $default-radius !default
+$form-padding-vertical: 0.5rem !default
+$form-padding-horizontal: 1rem !default
+$form-placeholder-color: $dark-lighter !default
+$form-font-size: $small-text-size !default
+$form-font-weight: $bold !default
+$form-text-color: $dark !default
+
+$custom-checkbox-bg: $white  !default
+$custom-checkbox-bg-checked: $blue !default
+$custom-checkbox-border-size-hover: 1.25px !default
+$custom-input-text-transform: normal !default
+$custom-input-font-weight: normal  !default
+$custom-input-font-size: $small-text-size !default
+
+// Form Feedback Vars
+$form-feedback-font-family: $header-font-family !default
+$form-feedback-font-size: $small-text-size !default
+$form-feedback-font-weight: $bold !default
+$form-feedback-margin-top: 0.5em !default
+
+// Form Feedback Vars
+$feedback-font-family: $base-font-family !default
+$feedback-font-size: $small-text-size !default
+$feedback-font-weight: $regular !default
+$feedback-invalid-color: $danger !default
+$feedback-valid-color: $success !default
+
+// Lightbox Vars
+$lightbox-bg-color: $dark !default
+$lightbox-close-btn-color: $white !default
+$lightbox-img-margin: 1.5em !default
+$lightbox-img-radius: $default-radius !default
+$lightbox-min-height: 720px !default
+$lightbox-profile-img-size: 340px !default
+$lightbox-text-color: $white !default
+
+// Media Vars
+$media-img-size: 60px !default
+$media-img-margin-right: 1rem !default
+
+// Modal Vars
+$modal-bg-color: $dark !default
+$modal-content-bg-color: $white !default
+$modal-padding-vertical: 1.5rem !default
+$modal-padding-horizontal: 1.5rem !default
+$modal-header-padding-top: 1.5rem !default
+$modal-header-padding-right: 0 !default
+$modal-header-padding-left: 0 !default
+$modal-header-padding-bottom: 1.5rem !default
+$modal-radius: $default-radius !default
+$modal-width: 520px !default
+
+// Nav Vars
+$nav-active-font-weight: $bold !default
+$nav-active-text-color: $primary !default
+$nav-bg-color: $white !default
+$nav-font-family: $header-font-family !default
+$nav-padding-vertical: 1.5em !default
+$nav-padding-horizontal: 0em !default
+$nav-link-color: $dark !default
+$nav-link-color-hover: $nav-active-text-color !default
+$nav-link-margin: 36px
+
+// Table Vars
+$table-card-label-weight: $bold !default
+$table-card-padding: 2em !default
+$table-card-radius: $default-radius !default
+$table-header-color: $white !default
+$table-header-font-family: $header-font-family !default
+$table-hover-color: shade($white, 2%) !default
+$table-padding-horizontal: 0.75rem !default
+$table-padding-vertical: 1rem !default
+$table-text-color: $dark !default
+
+// Tag Vars
+$tag-border-radius: $default-radius !default
+$tag-font-size: $small-text-size !default
+$tag-font-weight: $medium !default
+$tag-min-width: 84px !default
+$tag-padding-vertical: 0.4rem !default
+$tag-padding-horizontal: 1rem !default
+$tag-text-align: center !default
+$tag-text-transform: capitalize !default
+
+// Spinner Vars
+$spinner-border-width: 3px !default
+$spinner-size: 1.5rem !default
+
+// Sizing Util Class Sizes (width, max-width, min-width, etc...)
+$sizes: (10, 20, 30, 40, 50, 60, 70, 80, 90, 100) !default
+$img-object-sizes: (32, 36, 42, 48, 60, 66, 72, 84, 96) !default

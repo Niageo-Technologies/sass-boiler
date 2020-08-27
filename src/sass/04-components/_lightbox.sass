@@ -18,8 +18,8 @@
 
   & .close
     @extend %close-btn--reset
-    color: $lightbox-close-btn-color
     +position(absolute, 1em 1em null null)
+    color: $lightbox-close-btn-color
 
   &__content
     max-width: 90vw
@@ -44,6 +44,6 @@
     object-fit: cover
     border-radius: 100%
 
-    + .lightbox__caption
+  &--profile &__img + .lightbox__caption
       display: none
 

@@ -1,0 +1,80 @@
+.modal
+  +position(fixed, 0px null null 0px)
+  +transition(all, 300ms, ease-in)
+  +display-grid()
+  +padding(0 1rem)
+  +size(100vw, 100vh)
+  height: -webkit-fill-available
+  background: transparentize($modal-bg-color, 0.2)
+  overflow-y: auto
+  pointer-events: none
+  opacity: 0
+
+  & > *
+    align-self: start
+    justify-self: center
+
+  &--center > *
+    align-self: center
+    justify-self: center
+
+  &__content
+    +size(100%, null)
+    +border-radius($modal-radius)
+    +transform(translateY(-140vh))
+    +transition(transform, 600ms, ease-out)
+    +margin($modal-padding-vertical 0)
+    transition-delay: 500ms
+    overflow-x: hidden
+    max-width: $modal-width
+    padding: 0 $modal-padding-horizontal $modal-padding-vertical $modal-padding-horizontal
+    background: $modal-content-bg-color
+
+  &__header
+    +display-flex(space-between, flex-start)
+    +margin(null null 0)
+    +padding($modal-header-padding-top $modal-header-padding-right $modal-header-padding-bottom $modal-header-padding-left)
+    background: $modal-content-bg-color
+
+  &__header .close
+    +pointer
+    font-size: 1.75rem
+    color: $red-lighter
+    background: transparent
+    border: none
+
+    &:hover
+      color: $danger
+
+  &.active
+    opacity: 1
+    z-index: 15
+    pointer-events: auto
+
+  &.active .modal__content
+    +transform(translateY(0))
+
+  +mQD(map-get($grid-breakpoints, md))
+    +padding(20px 0px 0px)
+
+    &__content
+      +transform(translateY(140vh))
+      +position(relative, null)
+      +margin(0)
+      max-height: 90vh
+      overflow-y: auto
+      border-bottom-right-radius: 0px
+      border-bottom-left-radius: 0px
+
+    &__body
+      padding-bottom: 1.5rem
+
+    & > *
+      align-self: end
+
+    &--center > *
+      align-self: end
+
+    &__header
+      +position(sticky, 0px null null null)
+      z-index: 2
