@@ -16,12 +16,22 @@
   cursor: pointer  
 
 %input--reset
-  position: absolute
+  +position(absolute, null)
+  +size(1px)
   opacity: 0
+  appearance: none
+
+  + label
+    +pointer
+    display: inline-grid
+    grid-template-columns: auto 1fr
+    align-items: center
+    line-height: 0
+    // justify-content: center
+    // align-items: center
 
 %fs--16
   font-size: 16px
 
 %shadow
-  // filter: drop-shadow(1px 3px 3px transparentize($dark, 0.94))
   filter: drop-shadow(3.5px 3.5px 1px transparentize($dark, 0.95))

@@ -15,12 +15,12 @@ $base-font-weight: $regular !default
 $base-font-size: 16px !default
 $base-line-height: 1.5 !default
 
+// Small Text Size
+$small-font-size: 13px !default
+
 // Header Font
 $header-font-family: $default-font-stack !default
 $header-sizes: ( (header: h1, size: 42px, leading: 1.2, weight: $bolder), (header: h2, size: 32px, leading: 1.2, weight: $bolder), (header: h3, size: 24px, leading: 1.25, weight: $bolder), (header: h4, size: 20px, leading: 1.4, weight: $bold), (header: h5, size: 1rem, leading: 1.5, weight: $bold), (header: h6, size: 1rem, leading: 1.4, weight: $bold) ) !default
-
-// Small Text Size
-$small-text-size: 13px !default
 
 // Defaults
 $default-radius: 4px !default
@@ -119,26 +119,30 @@ $form-radius: $default-radius !default
 $form-padding-vertical: 0.5rem !default
 $form-padding-horizontal: 1rem !default
 $form-placeholder-color: $dark-lighter !default
-$form-font-size: $small-text-size !default
+$form-font-size: $small-font-size !default
 $form-font-weight: $bold !default
 $form-text-color: $dark !default
 
 $custom-checkbox-bg: $white  !default
 $custom-checkbox-bg-checked: $blue !default
-$custom-checkbox-border-size-hover: 1.25px !default
+$custom-checkbox-border-size: 1.25px !default
+$custom-checkbox-size: 14px !default
+$custom-checkbox-margin: 6px !default
+$custom-checkbox-border-color: $white-darker !default
+$custom-checkbox-border-color-hover: $blue !default
 $custom-input-text-transform: normal !default
 $custom-input-font-weight: normal  !default
-$custom-input-font-size: $small-text-size !default
+$custom-input-font-size: $small-font-size !default
 
 // Form Feedback Vars
 $form-feedback-font-family: $header-font-family !default
-$form-feedback-font-size: $small-text-size !default
+$form-feedback-font-size: $small-font-size !default
 $form-feedback-font-weight: $bold !default
 $form-feedback-margin-top: 0.5em !default
 
 // Form Feedback Vars
 $feedback-font-family: $base-font-family !default
-$feedback-font-size: $small-text-size !default
+$feedback-font-size: $small-font-size !default
 $feedback-font-weight: $regular !default
 $feedback-invalid-color: $danger !default
 $feedback-valid-color: $success !default
@@ -177,7 +181,7 @@ $nav-padding-vertical: 1.5em !default
 $nav-padding-horizontal: 0em !default
 $nav-link-color: $dark !default
 $nav-link-color-hover: $nav-active-text-color !default
-$nav-link-margin: 36px
+$nav-link-margin: 36px !default
 
 // Table Vars
 $table-card-label-weight: $bold !default
@@ -192,13 +196,21 @@ $table-text-color: $dark !default
 
 // Tag Vars
 $tag-border-radius: $default-radius !default
-$tag-font-size: $small-text-size !default
+$tag-font-size: $small-font-size !default
 $tag-font-weight: $medium !default
 $tag-min-width: 84px !default
 $tag-padding-vertical: 0.4rem !default
 $tag-padding-horizontal: 1rem !default
 $tag-text-align: center !default
 $tag-text-transform: capitalize !default
+
+// Tooltip Vars
+$tooltip-bg-color: $dark !default
+$tooltip-font-family: $base-font-family !default
+$tooltip-font-size: $small-font-size !default
+$tooltip-padding-horizontal: 12px !default
+$tooltip-padding-vertical: 12px !default 
+$tooltip-radius: $default-radius !default
 
 // Spinner Vars
 $spinner-border-width: 3px !default

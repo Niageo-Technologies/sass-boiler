@@ -20,6 +20,13 @@
         grid-column-start: auto
         grid-column-end: span $num
 
+=css-grid-static($columns: 12)
+  @for $i from 1 through $columns
+    $class: grid--#{$i}
+    .#{$class}
+      grid-column-start: auto
+      grid-column-end: span $i
+
 =css-grid-ready()
   [class*="grid--xs"],
   [class*="grid--sm"],

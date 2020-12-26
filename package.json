@@ -33,7 +33,7 @@
     "cssnano": "^4.1.10",
     "lit-element": "^2.4.0",
     "postcss-modules": "^2.0.0",
-    "sass": "^1.26.5"
+    "sass": "^1.30.0"
   },
   "dependencies": {},
   "postcss": {

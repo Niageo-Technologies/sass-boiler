@@ -1,5 +1,4 @@
 import { checkDOMChanges } from '../helpers/checkDOMChanges';
-
 class Close {
   constructor() {
     checkDOMChanges(this.attachEvents.bind(this));

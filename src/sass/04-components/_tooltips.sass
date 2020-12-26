@@ -1,0 +1,15 @@
+[data-tooltip], [tooltip]
+  +pointer
+
+.tooltip
+  +position(fixed, null)
+  +padding($tooltip-padding-vertical $tooltip-horizontal)
+  +border-radius($tooltip-radius)
+  +transition(all, ease, 120ms)
+  font-family: $tooltip-font-family !important
+  background: $tooltip-bg-color
+  color: $tooltip-text-color
+  font-size: $tooltip-font-size
+  width: max-content
+  opacity: 0
+  z-index: 999999

@@ -6,15 +6,15 @@
 =display-flex($jc: flex-start, $align-items: flex-start, $wrap: nowrap)
   display: flex
   min-width: 0px
-  @if $jc == true
+  @if $jc == default
     justify-content: flex-start
   @else
     justify-content: $jc
-  @if $align-items == true
+  @if $align-items == default
     align-items: flex-start
   @else
     align-items: $align-items
-  @if $wrap == true
+  @if $wrap == default
     flex-wrap: wrap
   @else
     flex-wrap: $wrap
@@ -63,7 +63,8 @@
   
 
 =img-object($fit: cover, $position: center, $size: (100%, 100%))
-  +size(nth($size, 1), nth($size, 2))
+  width: nth($size, 1)
+  height: nth($size, 2)
   object-fit: $fit
   object-position: $position
 
@@ -96,8 +97,8 @@
 =transition($property, $time, $func)
   transition: $property $time ease
 
-=size($width: null, $height: null)
-  @if $width
-    width: $width
-  @if $height
-    height: $height
+// =size($width: null, $height: null)
+//   @if $width
+//     width: $width
+//   @if $height
+//     height: $height

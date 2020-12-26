@@ -1,0 +1,103 @@
+$total-checkbox-height: $custom-checkbox-border-size + $custom-checkbox-size
+$checkmark-height: 0.38 * $total-checkbox-height
+$checkmark-width: 0.19 * $total-checkbox-height
+
+input[type=checkbox],
+input[type=radio],
+.input--checkbox,
+.input--radio
+  @extend %input--reset
+
+input[type=checkbox] + label,
+input[type=radio] + label,
+.input--checkbox + label,
+.input--radio + label
+
+  &:hover::before
+    border-color: $custom-checkbox-border-color-hover
+    background: $custom-checkbox-bg
+
+  &::before
+    +size(12px)
+    content: ''
+    margin-right: $custom-checkbox-margin
+    display: inline-block
+    border: $custom-checkbox-border-size solid $custom-checkbox-border-color
+
+input[type=checkbox]:checked + label,
+input[type=radio]:checked + label,
+.input--checkbox:checked + label,
+.input--radio:checked + label
+  &::before
+    border: $custom-checkbox-border-size solid $custom-checkbox-border-color-hover
+
+input[type=checkbox] + label,
+.input--checkbox + label
+  &::before
+    border-radius: 3px
+
+  &::after
+    +size($checkmark-height, $checkmark-width)
+    +position(absolute, null null null calc(#{($total-checkbox-height - $checkmark-width)} / 2))
+    content: ''
+    transform: translateY(#{0.20 * $checkmark-height}) rotate(-50deg)
+    border-left: 2px solid $white
+    border-bottom: 2px solid $white
+
+input[type=checkbox]:checked + label::before,
+.input--checkbox:checked + label::before
+  background: $custom-checkbox-bg-checked
+
+input[type=radio] + label,
+.input--radio + label
+  &::before
+    border-radius: 100%
+
+input[type=radio]:checked + label,
+.input--radio:checked + label
+  &::after
+    +size(calc($total-checkbox-height / 2))
+    +position(absolute, null null null calc(#{$total-checkbox-height} * 0.25))
+    border-radius: 100%
+    content: ''
+    background: $custom-checkbox-bg-checked
+
+.input--file, input[type="file"]
+  @extend %input--reset
+
+  + label
+    +pointer
+    padding: $form-padding-vertical $form-padding-horizontal
+    border: $form-border-width dashed $white-darker
+    border-radius: $form-radius
+    background: $form-bg
+    color: $form-placeholder-color
+    font-size: $custom-input-font-size
+    font-weight: $custom-input-font-weight
+    text-transform: $custom-input-text-transform
+    position: relative
+    display: inline-block
+    text-align: center
+    letter-spacing: 0.075rem
+
+  > i, > img
+    margin-right: 0.50em
+
+  &:hover
+    border: 1.25px solid $blue
+    color: $blue
+
+.input--select
+  +position(relative, null)
+
+  select
+    appearance: none
+
+  &::after
+    +position(absolute, 1.25rem 1.25rem null null)
+    +size(0.5rem, 0.5rem)
+    +transform(rotate(-45deg))
+    content: ''
+    background: transparent
+    border-left: 1.75px solid shade($white-darker, 40%)
+    border-bottom: 1.75px solid shade($white-darker, 40%)
