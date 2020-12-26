@@ -1,0 +1,54 @@
+// Bourbon 6.0.0
+// https://www.bourbon.io/
+// Copyright 2011-2019 thoughtbot, inc.
+// MIT License
+
+@import "core/helpers/buttons-list";
+@import "core/helpers/scales";
+@import "core/helpers/text-inputs-list";
+
+@import "core/settings/settings";
+
+@import "core/validators/contains";
+@import "core/validators/contains-falsy";
+@import "core/validators/is-color";
+@import "core/validators/is-length";
+@import "core/validators/is-number";
+@import "core/validators/is-size";
+
+@import "core/utilities/assign-inputs";
+@import "core/utilities/compact-shorthand";
+@import "core/utilities/directional-property";
+@import "core/utilities/fetch-bourbon-setting";
+@import "core/utilities/font-source-declaration";
+@import "core/utilities/gamma";
+@import "core/utilities/lightness";
+@import "core/utilities/contrast-ratio";
+@import "core/utilities/unpack-shorthand";
+
+@import "core/library/border-color";
+@import "core/library/border-radius";
+@import "core/library/border-style";
+@import "core/library/border-width";
+@import "core/library/buttons";
+@import "core/library/clearfix";
+@import "core/library/contrast-switch";
+@import "core/library/ellipsis";
+@import "core/library/font-face";
+@import "core/library/font-stacks";
+@import "core/library/hide-text";
+@import "core/library/hide-visually";
+@import "core/library/margin";
+@import "core/library/modular-scale";
+@import "core/library/overflow-wrap";
+@import "core/library/padding";
+@import "core/library/position";
+@import "core/library/prefixer";
+@import "core/library/shade";
+@import "core/library/size";
+@import "core/library/strip-unit";
+@import "core/library/text-inputs";
+@import "core/library/timing-functions";
+@import "core/library/tint";
+@import "core/library/triangle";
+@import "core/library/value-prefixer";
