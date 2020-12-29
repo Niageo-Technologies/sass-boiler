@@ -1,10 +1,10 @@
 function removeSrc(imgs) {
   imgs.forEach(img => {
-    if (img.src) {
-      img.dataset.src = img.src;
-      img.src = '';
+    if (img.src && !img.dataset.src) {
+      img.dataset.src = img.src
+      img.src = ''
     }
-  });
+  })
 }
 
-export { removeSrc };
+export { removeSrc }

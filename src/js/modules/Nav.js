@@ -3,9 +3,8 @@ class Nav {
     this.navbar = document.querySelector('.nav');
     this.burger = document.querySelector('.nav__burger');
 
-    console.log(this.burger);
-
-    this.burger.addEventListener('click', this.open.bind(this));
+    if (this.burger)
+      this.burger.addEventListener('click', this.open.bind(this));
   }
 
   open() {
