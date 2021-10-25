@@ -10,6 +10,6 @@ new Nav();
 new Link().init();
 new LimitChars();
 new LazyLoad();
-new InputFileName();
+// new InputFileName();
 new Toggle();
 new Close();

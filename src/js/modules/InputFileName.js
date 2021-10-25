@@ -4,6 +4,7 @@ class InputFileName {
     this.fileFields = document.querySelectorAll('input[type="file"]');
 
     if (!this.fileFields) return;
+
     this.fileFields.forEach(this.attachListener);
     this.fileFields.forEach(this.setFileLabel);
     this.forms.forEach(this.resetForm.bind(this));

@@ -12,6 +12,8 @@
       line-height: $line-height
       margin-top: 0px !important
       margin-bottom: round( 0.20 * $font-size )
+      +mQD(map-get($grid-breakpoints, sm))
+        font-size: map-get($item, mobile-size)
 
 body
   +base-font-family
